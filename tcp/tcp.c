@@ -19,6 +19,7 @@ static void on_close(uv_handle_t* handle) {
 	printf("disconnected\n");
 }
 
+/* Callback on data chunk from client */
 static void on_read(uv_stream_t* stream, ssize_t nread, uv_buf_t buf) {
   if (nread >= 0) {
     printf("chunk: %.*s", (int)nread, buf.base);
@@ -32,7 +33,6 @@ static void on_read(uv_stream_t* stream, ssize_t nread, uv_buf_t buf) {
       exit(-1);
     }
   }
-
   free(buf.base);
 }
 
