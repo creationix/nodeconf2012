@@ -1,0 +1,3 @@
+[submodule "tcp/libuv"]
+	path = tcp/libuv
+	url = https://github.com/joyent/libuv.git
